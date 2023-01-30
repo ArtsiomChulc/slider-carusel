@@ -90,10 +90,10 @@ body {
 .carousel-indicators li {
 	box-sizing: content-box;
 	flex: 0 1 auto;
-	width: 10px;
+	width: 15px;
 	height: 6px;
-	margin-right: 3px;
-	margin-left: 3px;
+	margin-right: 6px;
+	margin-left: 6px;
 	cursor: pointer;
 	background-color: #fff;
 	background-clip: padding-box;
