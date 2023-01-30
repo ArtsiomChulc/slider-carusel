@@ -13,6 +13,7 @@ body {
 
 .slider__wrapper {
 	width: 600px;
+	position: relative;
 }
 
 .slider__inner {
@@ -71,6 +72,35 @@ body {
 
 .slide-number {
 	font-size: 36px;
+}
+
+.carousel-indicators {
+	position: absolute;
+	right: 5%;
+	bottom: 20%;
+	left: 0;
+	z-index: 15;
+	display: flex;
+	justify-content: center;
+	margin-right: 15%;
+	margin-left: 15%;
+	list-style: none;
+}
+
+.carousel-indicators li {
+	box-sizing: content-box;
+	flex: 0 1 auto;
+	width: 10px;
+	height: 6px;
+	margin-right: 3px;
+	margin-left: 3px;
+	cursor: pointer;
+	background-color: #fff;
+	background-clip: padding-box;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	opacity: .5;
+	transition: all .6s ease;
 }
 
 @media (max-width: 915px) {
