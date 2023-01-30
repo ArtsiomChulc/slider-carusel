@@ -7,7 +7,22 @@ document.addEventListener('DOMContentLoaded', () => {
 		nextBtn = document.querySelector('#next'),
 		sliderInner = document.querySelector('.slider__inner'),
 		wrapper = document.querySelector('.slider__wrapper'),
+		indicators = document.querySelector('.carousel-indicators'),
 		width = window.getComputedStyle(wrapper).width;
+	const liArr = [];
+
+	for (let i = 0; i <= slides.length - 1; i++) {
+		const li = document.createElement('li');
+		indicators.append(li);
+
+		if (i == 0) {
+			li.style.opacity = 1;
+			li.style.width = '30px';
+		}
+
+		liArr.push(li);
+	}
+	console.log(liArr);
 
 	slides.forEach(slide => slide.style.width = width);
 	sliderInner.style.width = 100 * slides.length + '%';
@@ -47,6 +62,12 @@ document.addEventListener('DOMContentLoaded', () => {
 			current.textContent = slideIndex;
 		}
 
+		liArr.forEach(item => {
+			item.style.opacity = 0.5;
+			item.style.width = '10px';
+		});
+		liArr[slideIndex - 1].style.opacity = 1;
+		liArr[slideIndex - 1].style.width = '30px';
 	});
 	prevBtn.addEventListener('click', () => {
 
@@ -70,6 +91,13 @@ document.addEventListener('DOMContentLoaded', () => {
 			total.textContent = slides.length;
 			current.textContent = slideIndex;
 		}
+
+		liArr.forEach(item => {
+			item.style.opacity = 0.5;
+			item.style.width = '10px';
+		});
+		liArr[slideIndex - 1].style.opacity = 1;
+		liArr[slideIndex - 1].style.width = '30px';
 
 	});
 
